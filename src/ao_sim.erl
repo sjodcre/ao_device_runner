@@ -1,17 +1,15 @@
 -module(ao_sim).
-
-%% API exports
 -export([main/1]).
 
-%%====================================================================
-%% API functions
-%%====================================================================
+main([DeviceStr, KeyStr]) ->
+    Result = dispatch(DeviceStr, KeyStr),
+    io:format("~p~n", [Result]),
+    halt(0);
+main(_) ->
+    io:format("Usage: ./ao_sim <Device> <Key>\n"),
+    halt(1).
 
-%% escript Entry point
-main(Args) ->
-    io:format("Args: ~p~n", [Args]),
-    erlang:halt(0).
-
-%%====================================================================
-%% Internal functions
-%%====================================================================
+dispatch("hello@1.0", Key) ->
+    dev_hello:call(Key, #{});  % pass empty map for now
+dispatch(Device, _) ->
+    {error, #{reason => io_lib:format("Device ~s not found", [Device])}}.

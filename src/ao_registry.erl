@@ -6,7 +6,6 @@
 device_map() ->
     #{
         <<"hello@1.0">> => dev_hello,
-        <<"calculator@1.0">> => dev_calculator,
         <<"echo@1.0">> => dev_echo,
         <<"meta@1.0">> => dev_meta
     }.

@@ -5,6 +5,9 @@
 get_module(DeviceBin) ->
     DeviceMap = #{
         <<"hello@1.0">> => dev_hello,
-        <<"calculator@1.0">> => dev_calculator
+        <<"calculator@1.0">> => dev_calculator,
+        <<"echo@1.0">> => dev_echo
+
+        
     },
     maps:get(DeviceBin, DeviceMap, undefined).

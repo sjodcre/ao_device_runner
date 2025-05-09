@@ -7,7 +7,9 @@ device_map() ->
     #{
         <<"hello@1.0">> => dev_hello,
         <<"echo@1.0">> => dev_echo,
-        <<"meta@1.0">> => dev_meta
+        <<"meta@1.0">> => dev_meta,
+        <<"calculator@1.0">> => dev_calculator
+
     }.
 
 get_module(DeviceBin) ->

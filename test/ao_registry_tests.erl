@@ -14,7 +14,7 @@ registry_module_exports_test_() ->
     Keys = ao_registry:get_all_devices(),
     [ begin
         Module = ao_registry:get_module(Key),
-        _ = ?_assertEqual(true, erlang:function_exported(Module, call, 2)),
+        _ = ?_assertEqual(true, erlang:function_exported(Module, call, 4)),
         _ = ?_assertEqual(true, erlang:function_exported(Module, info, 0))
       end || Key <- Keys,
              ao_registry:get_module(Key) =/= undefined ].
